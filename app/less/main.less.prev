@@ -1,0 +1,1043 @@
+/**
+ * This is the main application stylesheet. It should include or import all
+ * stylesheets used throughout the application as this is the only stylesheet in
+ * the Grunt configuration that is automatically processed.
+ */
+
+/**
+ * First, we include the Twitter Bootstrap LESS files. Only the ones used in the
+ * project should be imported as the rest are just wasting space.
+ */
+
+@import '../../vendor/bootstrap/less/bootstrap.less';
+
+
+/**
+ * This is our main variables file. We must include it last so we can overwrite any variable
+ * definitions in our imported stylesheets.
+ */
+
+@import 'variables.less';
+
+/**
+ * Font Awesome Less
+
+
+@import '../../vendor/components-font-awesome/less/font-awesome.less';
+@fa-font-path: "fonts";
+*/
+
+/**
+ * Typography
+ */
+
+@font-face{
+  font-family:"Neue Helvetica W01";
+  src:url("fonts/helvetica/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot?#iefix");
+  src:url("fonts/helvetica/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot?#iefix") format("eot"),
+  url("fonts/helvetica/bcf54343-d033-41ee-bbd7-2b77df3fe7ba.woff") format("woff"),
+  url("fonts/helvetica/b0ffdcf0-26da-47fd-8485-20e4a40d4b7d.ttf") format("truetype"),
+  url("fonts/helvetica/da09f1f1-062a-45af-86e1-2bbdb3dd94f9.svg#da09f1f1-062a-45af-86e1-2bbdb3dd94f9") format("svg");
+  font-weight:400;font-style:normal
+}
+
+@font-face{
+  font-family:"Neue Helvetica W01";
+  src:url("fonts/helvetica/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot?#iefix");
+  src:url("fonts/helvetica/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot?#iefix") format("eot"),
+  url("fonts/helvetica/bcf54343-d033-41ee-bbd7-2b77df3fe7ba.woff") format("woff"),
+  url("fonts/helvetica/b0ffdcf0-26da-47fd-8485-20e4a40d4b7d.ttf") format("truetype"),
+  url("fonts/helvetica/da09f1f1-062a-45af-86e1-2bbdb3dd94f9.svg#da09f1f1-062a-45af-86e1-2bbdb3dd94f9") format("svg");
+  font-weight:400;font-style:normal
+}
+
+@font-face{
+  font-family:"Neue Helvetica W01";
+  src:url("fonts/helvetica/c07fef9e-a934-42d7-92ad-69205f2b8a00.eot?#iefix");
+  src:url("fonts/helvetica/c07fef9e-a934-42d7-92ad-69205f2b8a00.eot?#iefix")
+  format("eot"),url("fonts/helvetica/14ff6081-326d-4dae-b778-d7afa66166fc.woff")
+  format("woff"),url("fonts/helvetica/8fda1e47-19be-46c7-8d83-8d4fb35572f0.ttf")
+  format("truetype"),url("fonts/helvetica/f751c8ae-1057-46d9-8d74-62592e002568.svg#f751c8ae-1057-46d9-8d74-62592e002568") format("svg");
+  font-weight:600;font-style:normal
+}
+
+@font-face{
+  font-family:"Neue Helvetica W01_i3";
+  src:url("fonts/helvetica/a4f9f319-dec9-4afc-8b50-e18cc1b61cb4.eot?#iefix") format("eot")
+}
+
+@font-face{
+  font-family:"Neue Helvetica W01_i4";
+  src:url("fonts/helvetica/58a5cbff-d570-4c18-a5e3-60868dc07ae8.eot?#iefix") format("eot")
+}
+
+@font-face{font-family:"Neue Helvetica W01_n7";
+  src:url("fonts/helvetica/bb37f770-d450-4f24-af2b-3a81bf640315.eot?#iefix") format("eot")
+}
+
+
+body{
+  font-family: "Neue Helvetica W01", Helvetica, Arial, sans-serif !important;
+  color: @miro-main-blue;
+  background-color: #fff !important;
+  font-weight: normal;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p {
+  font-family: "Neue Helvetica W01", Helvetica, Arial, sans-serif !important;
+  font-weight: normal;
+}
+
+p {
+  font-size: 15px;
+  font-family: "Neue Helvetica W01", Helvetica, Arial, sans-serif !important;
+}
+
+a, button {
+  outline: none !important;
+}
+
+.btn {
+  border-radius: 2px !important;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+h1.subtitle {
+  font-size: 19px;
+  padding: 6px 0 0 15px;
+  color: @miro-main-blue;
+  margin: 0;
+}
+
+h2.subtitle {
+  font-size: 1.2em;
+  background-color: @miro-light-shadow-blue;
+  border-left: 8px solid @miro-light-blue;
+  padding: 6px 5px 3px 5px;
+  font-weight: bold;
+  margin: 30px 0 40px 0;
+}
+
+.report-title {
+  margin-top: 36px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bar-title {
+  margin-top: 17px;
+  padding: 0 10px 0 60px;
+
+  h1 {
+    margin-top: 0 !important;
+    font-size: 22px;
+    color: rgb(255,255,255);
+  }
+}
+
+.report-title h1 {
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.hr {
+  height: 1px;
+  border-bottom: 1px dashed @miro-border-light;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.report-tabs {
+  z-index: 3;
+  position: relative;
+  margin-top: 34px;
+
+  .nav-tabs > li > a {
+    border: 1px solid @miro-border-light !important;
+    background-color: @miro-border-light !important;
+    color: @miro-blue-gray;
+    font-size: 16px;
+    padding: 14px 20px 10px 20px;
+  }
+  .nav-tabs > li > a:hover {
+    color: @miro-main-blue;
+  }
+  .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    border: 1px solid @miro-border-light !important;
+    border-bottom-color: transparent !important;
+    background-color: #fff !important;
+    color: @miro-main-blue;
+  }
+  .nav-tabs > li.active > a:before {
+    font-family: 'FontAwesome';
+    content: '\f101 ';
+  }
+}
+
+.axisLabel {
+  padding: 0 10px;
+  text-align: center;
+  color: @miro-text-light;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: normal;
+  margin-bottom: 40px;
+  cursor: default;
+}
+
+.alert-reports {
+  margin: 20px !important;
+}
+
+.loginbackground{
+  background-color: @default-btn;
+}
+
+.body-tab {
+  z-index: 2;
+  border: 1px solid @miro-border-light;
+  margin-top: -1px;
+  margin-bottom: 40px;
+  position: relative;
+  padding-top: 40px;
+
+  .showOptions {
+    float: right;
+  }
+
+  .simulate-toggle {
+    float: right;
+  }
+
+  .showOptions.one-line {
+    margin-top: 18px;
+  }
+
+  .body-header-tab {
+    padding: 0 21px;
+  }
+
+  .body-content-tab {
+    margin: 20px 0 10px 0;
+  }
+}
+
+.btn-report-info {
+  border: none;
+  border-radius: 100% !important;
+  background-color: @miro-light-blue !important;
+  background-size: 100%;
+  font-family: Times !important;
+  font-size: 31.61px;
+  font-weight: bold;
+  font-style: italic;
+  width: 37px;
+  height: 37px;
+  line-height: 43px;
+  color: #ffffff;
+  padding: 0;
+  margin-top: 5px;
+  outline: none !important;
+  text-transform: lowercase !important;
+  float: right !important;
+}
+
+.btn-report-info:hover {
+  background-color: @miro-main-blue !important;
+}
+
+/* Header Options Reports */
+
+.time-range-content .time-range div {
+  padding: 0 !important;
+}
+
+/* Dropdown */
+
+.dropdown-menu {
+  padding-bottom: 0;
+}
+
+.dropdown-toggle {
+  text-align: left;
+  padding-right: 28px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.dropdown-toggle .caret {
+  border-top-width: 8px;
+  border-right-width:  5px;
+  border-left-width: 5px;
+  top: 50%;
+  margin-top: -3px;
+  right: 10px;
+  position: absolute;
+}
+
+.modal-content{
+  border: none !important;
+}
+
+/* NVD3 Tooltip */
+.nvtooltip {
+  box-shadow: 0 0 5px rgba(0,0,0,.2) !important;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px !important;
+  text-align: left;
+  background: rgb(255, 255, 255) !important;
+}
+
+.nvtooltip h3 {
+  font-size: 16px !important;
+  text-align: left;
+  background: rgb(255, 255, 255) !important;
+}
+
+.nvtooltip p {
+  font-size: 14px !important;
+  text-align: left;
+}
+
+.nvtooltip span.bold {
+  font-weight: bold !important;
+}
+
+.logout-bar{
+  float: right;
+  padding: 19px 5px 0 0;
+  color: #fff;
+  text-align: right;
+
+  .separator{
+    float: right;
+    color: @miro-text-light;
+    margin: 0 10px;
+  }
+  a {
+    float: right;
+    cursor: pointer;
+    color: @miro-orange;
+  }
+  .info-link {
+    font-size: 18px;
+  }
+  .name{
+    float: right;
+  }
+}
+
+/**
+ * Navigation
+ */
+.navbar-miro {
+  background-color: #fff;
+  border: none;
+  border-radius: 0;
+  max-height: 50px;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+
+  .navbar-toggle {
+    border: none !important;
+    margin-top: 7px;
+    margin-bottom: 6px;
+    margin-right: 10px;
+  }
+
+  .navbar-toggle:hover, .navbar-toggle:active, .navbar-toggle:focus {
+    border: none !important;
+    background: none !important;
+  }
+
+  .navbar-fixed {
+    position: fixed;
+    background-color: @miro-main-blue;
+    width: 100%;
+    left: 0;
+  }
+
+  .navbar-fixed .navbar-brand {
+    padding: 18px 15px 20px 16px !important;
+    margin-top: -25px;
+  }
+
+  .navbar-toggle .icon-bar {
+    background-color: #fff !important;
+    width: 28px;
+    height: 5px;
+    border-radius: 5px;
+  }
+
+  .navbar-collapse {
+    margin: 0 !important;
+  }
+
+  .navbar-nav {
+    margin: 0 !important;
+    float: left;
+    width: 100%;
+  }
+
+  .navbar-nav > li {
+    width: 100%;
+    margin: 0px;
+    background-color: @miro-nav-tab-bg-color;
+    border: none;
+    height: 50px;
+    display: table;
+    vertical-align: middle;
+    border-top-right-radius: 10px;
+
+    a {
+      background-color: @miro-nav-tab-bg-color;
+      color: @miro-main-blue;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      padding: 3px 3px 0 3px;
+      display: table-cell;
+      vertical-align: middle;
+      outline: none;
+      line-height: 17px;
+      font-size: 14px;
+      border-top-right-radius: 10px;
+
+      br {
+        display: none;
+      }
+
+      span {
+        position: relative;
+       // padding-left: 21px;
+      }
+
+      i:before { /* MIAB Icons */
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -9px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .navbar-nav > .active {
+    background-color: @miro-nav-tab-active-bg-color;
+    color: @miro-nav-tab-active-text-color;
+    border-left: 1px none;
+    border-right: 1px none;
+  }
+  .navbar-nav > .active > a,
+  .navbar-nav > .active > a:hover,
+  .navbar-nav > .active > a:focus {
+    background-color: @miro-nav-tab-active-bg-color;
+    color: @miro-nav-tab-text-color;
+  }
+
+  .navbar-nav > li a:hover {
+    color: @miro-nav-tab-text-color;
+    background-color: @miro-orange;
+  }
+
+  .navbar-brand {
+    height: 70px;
+    line-height: 20px;
+    padding: 5px 15px 5px 5px;
+    margin-top: -25px;
+  }
+
+  .navbar-brand > .miro-logo {
+    width: 100%;
+    max-width: 150px;
+  }
+}
+
+/**
+ * Header sub menu
+ */
+
+.header-sub-menu {
+  width: 100%;
+  background-color: @miro-main-blue;
+  min-height: 57px;
+}
+
+/**
+ * Footer
+ */
+footer {
+  width: 100%;
+  height: 50px;
+  background-color: @miro-main-blue;
+  color: @miro-light-blue;
+  font-size: 14px;
+  padding-top: 22px;
+  z-index: 11;
+
+  .miro-copyright {
+    padding-left: 15px;
+    .miro-logo{
+      width: 100%;
+      max-width: 86px;
+    }
+  }
+
+  .footer-links {
+    text-align: right;
+    padding-right: 10px;
+    font-weight: normal;
+  }
+
+  .footer-links a {
+    color: #fff;
+    opacity: 0.5;
+  }
+  .footer-links a:hover {
+    color: @miro-main-orange;
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
+/**
+ * General Styles
+ */
+
+.bold {
+  font-weight: bold !important;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.line-miro {
+  stroke: #8ab8cb !important;
+  stroke-width: 4 !important;
+  stroke-linecap: square !important;
+  stroke-dasharray: 5,8 !important;
+  stroke-opacity: 1 !important;
+  fill: none !important;
+}
+
+.line-miro path {
+  stroke-width: 4 !important;
+}
+
+/**
+ * Buttons
+ */
+.btn.big {
+  font-size: 18px;
+}
+
+.btn.orange {
+  background-color: @miro-orange !important;
+}
+
+.btn-link.orange {
+  color: @miro-orange;
+}
+
+.btn.discover:before, .btn.discover:after {
+  font-family: 'FontAwesome';
+  position: absolute;
+}
+
+.btn.discover {
+  padding-right: 26px;
+}
+
+.btn.discover:before {
+  content: '\f0da';
+  right: 15px;
+  font-size: 16px;
+}
+
+.btn.discover:after {
+  content: '\f105';
+  position: absolute;
+  font-size: 18px;
+  top: 50%;
+  margin-top: -12px;
+  right: 10px;
+}
+
+.clear-btn {
+  padding-left: 0 !important;
+}
+
+.clear-btn button {
+  padding-left: 0 !important;
+  margin: 5px 0 0 0 !important;
+}
+
+
+
+
+.container-header {
+  max-width: 100%; !1254px;
+  width: auto !important;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+.container .title h1 {
+  font-size: 30px;
+  color: @miro-blue-gray;
+}
+
+.container .title {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.container .title p {
+  font-size: 18px;
+  color: @miro-light-gray;
+}
+
+.form-group label {
+  font-size: 18px;
+  margin-top: 5px;
+  color: @miro-main-blue;
+}
+
+.form-group input {
+  font-size: 18px;
+  color: @miro-text-light-gray;
+}
+
+.section {
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+/* Alerts */
+.alert {
+  margin-bottom: 40px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 18px;
+}
+
+.alert-success {
+  background-color: @light-green;
+  border-color: @dark-green;
+  color: @dark-green;
+}
+
+.alert-danger {
+  background-color: @light-red;
+  border-color: @dark-red;
+  color: @dark-red;
+}
+
+/* Bootstrap Rules */
+
+.no-padding {
+  padding: 0;
+}
+
+.row-divider {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* Checkbox */
+.miab-checkbox {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  color: @miro-text-light;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.miab-checkbox:before {
+  font-family: 'FontAwesome' !important;
+  font-size: 32px;
+  position: absolute;
+  top: 1px;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  content: '\f096';
+  color: rgb(192, 190, 194);
+}
+
+.miab-checkbox.checked:after {
+  font-family: 'FontAwesome' !important;
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -10px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  content: '\f00c';
+  color: @miro-light-blue;
+}
+
+/* Radio Button */
+.showOptions a {
+  display: inline-block;
+  position: relative;
+  padding-left: 28px;
+  text-decoration: none;
+  margin-left: 4px;
+  cursor: pointer;
+  color: @miro-text-light;
+}
+
+.showOptions span {
+  display: table;
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  top: -2px;
+  font-family: "FontAwesome" !important;
+}
+
+.showOptions a span:before, .showOptions a span:after {
+  font-family: 'FontAwesome' !important;
+  vertical-align:middle;
+  display: table-cell;
+  text-align: center;
+  width: 100%;
+  left: 0;
+}
+
+.showOptions a span.dot:after {
+  opacity: 0;
+}
+
+.showOptions a span.circle {
+  font-size: 17px;
+  content: '\f1db' !important;
+  color: rgb(192, 190, 194);
+}
+
+.showOptions a span.circle:before {
+  font-size: 17px;
+  content: '\f1db';
+  color: rgb(192, 190, 194);
+}
+
+.showOptions a.active span.dot {
+  font-family: 'FontAwesome' !important;
+  font-size: 9px;
+  content: '\f111' !important;
+  color: @miro-light-blue;
+  opacity: 1;
+}
+
+.showOptions a.active span.dot:after {
+  font-family: 'FontAwesome';
+  font-size: 9px;
+  content: '\f111';
+  color: @miro-light-blue;
+  opacity: 1;
+}
+
+.simulate-toggle a {
+  color: @miro-text-dark;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+.simulate-toggle a:hover {
+  color: @miro-orange;
+}
+
+.simulate-toggle a span {
+  text-decoration: underline !important;
+}
+
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+
+  .container{
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+
+    .row {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  }
+}
+  /**
+   * Navigation
+   */
+  .navbar-miro {
+    min-height: 50px;
+    max-height: 65px;
+    height: 100%;
+    padding-top: 20px;
+    position: relative;
+    margin-bottom: 0 !important;
+
+    .navbar-collapse {
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+
+    .navbar-nav {
+      width: auto;
+    }
+
+    .navbar-nav > li {
+      border-bottom: none;
+      width: 110px;
+      margin: 0px 1px;
+      height: 45px;
+      font-size: 12px;
+
+      a {
+        width: 100%;
+        height: 100%;
+        padding: 3px 3px 0 3px;
+
+        br {
+          display: inline;
+        }
+      }
+    }
+
+    .navbar-nav > li:last-child{
+      margin-left: 0;
+    }
+
+    .navbar-nav > li:first-child{
+      border-right: none;
+    }
+
+    .navbar-brand,
+    .container .navbar-brand {
+      height: 70px;
+      line-height: 20px;
+      margin-left: 0;
+      margin-top: -25px;
+      padding: 5px 15px 5px 7px;
+    }
+
+    .navbar-brand > .miro-logo {
+      width: 100%;
+      max-width: 120px;
+    }
+  }
+  
+    .navbar-brand-text{
+	  float:left;
+	  padding:5px 16px 5px 15px;
+	  font-size:2em;
+	  font-weight:bold;
+  }
+
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+
+}
+
+
+
+
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+
+  .container {
+    width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 62px;
+  }
+}
+  /**
+   * Navigation
+   */
+  .navbar-miro {
+    min-height: 50px;
+    max-height: 75px;
+    height: 100%;
+    padding-top: 25px;
+	
+    .navbar-nav > li,
+    .navbar-nav > .active {
+      width: 113px;
+      margin: 0px 2px;
+      height: 50px;
+      font-size: 14px;
+      float: left;
+
+      a {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .navbar-brand,
+    .container .navbar-brand {
+      height: 70px;
+      line-height: 20px;
+      margin-left: -15px;
+      padding: 5px 16px 5px 15px;
+    }
+
+    .navbar-brand > .miro-logo {
+      width: 100%;
+      max-width: 150px;
+	  margin-top:27px;
+    }
+  }
+  
+  .navbar-brand-text{
+	  float:left;
+	  padding:5px 16px 5px 15px;
+	  font-size:2em;
+	  font-weight:bold;
+  }
+
+  /**
+   * Footer
+   */
+  footer {
+    height: 62px;
+    font-size: 14px;
+
+    .miro-copyright {
+      padding-left: 18px;
+      .miro-logo {
+        max-width: 101px;
+      }
+    }
+  }
+
+.wider_table {
+    width:300px;
+}
+.slim_table {
+    width:50px;
+}
+.slimmer_table {
+    width:100px;
+}
+.main {
+    padding-top:20px;
+}
+
+.margin-bottom-20{
+    margin-bottom:20px;
+}
+
+.header-nav {
+  background-color: #61122f;
+  border-radius: 0;
+  border: 0;
+}
+
+.log-img {
+}
+
+
+// new styles
+body {
+  background:white;
+  font:normal normal 13px/1.4 Segoe,"Segoe UI",Calibri,Helmet,FreeSans,Sans-Serif;
+  padding:0px;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.tree {
+  margin:0 0 0 0;//1em; /* indentation */
+  padding:0;
+  list-style:none;
+  color:#369;
+  position:relative;
+}
+
+//.tree ul {margin-left:.5em}
+
+.tree ul {margin-left:0}
+
+.tree:before,
+.tree ul:before {
+  content:"";
+  display:block;
+  width:0;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  border-left:1px solid;
+}
+
+.tree li {
+  margin:0;
+  padding:0 1.5em; /* indentation + .5em */
+  line-height:2em; /* default list item's `line-height` */
+  font-weight:bold;
+  position:relative;
+}
+
+.tree li:before {
+  content:"";
+  display:block;
+  width:10px; /* same with indentation */
+  height:0;
+  border-top:1px solid;
+  margin-top:-1px; /* border top width */
+  position:absolute;
+  top:1em; /* (line-height/2) */
+  left:0;
+}
+
+.tree li:last-child:before {
+  background:white; /* same with body background */
+  height:auto;
+}
+
+  
+
+
+/**
+ * Now that all app-wide styles have been applied, we can load the styles for
+ * all the submodules and components we are using. 
+ *
+ */
+ 
+ @dark-grey:#696969;
+ @light-grey: #d3d3d3;
+ @off-white:#e5e5e5;
+ 
+ @import '../app/exchanges/exchanges.less';
+ @import '../app/bgpSessions/bgpSessions.less';
+ 
+ 

@@ -1,0 +1,15 @@
+{
+  "name": "mets-server",
+  "version": "1.0.0",
+  "description": "provide apis for mets.",
+  "main": "app.js",
+  "scripts": {
+    "test": "mytest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "q": "^1.4.1"
+  }
+}

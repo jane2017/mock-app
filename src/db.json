@@ -1,0 +1,44 @@
+{
+  "events": [
+    {
+      "eventOid": 1474,
+      "startDate": 1479146361,
+      "endDate": 1479148361,
+      "remindDate": 1479147361,
+      "description": "this is a dummy event 1.",
+      "workBy": "user1",
+      "ticketId": 1000,
+      "urgencyId": "Plannded",
+      "stateId": "Pending update",
+      "deviceText": "border6.dal",
+      "serviceText": "datartn-5"
+    },
+    {
+      "eventOid": 1475,
+      "startDate": 1479146361,
+      "endDate": 1479148361,
+      "remindDate": 1479147361,
+      "description": "this is a dummy event 1.",
+      "workBy": "user1",
+      "ticketId": 1000,
+      "urgencyId": "Unplannded",
+      "stateId": "Pending notification",
+      "deviceText": "border6.dal",
+      "serviceText": "datartn-5"
+    },
+    {
+      "eventOid": 1476,
+      "startDate": 1479146361,
+      "endDate": 1479148361,
+      "remindDate": 1479147361,
+      "description": "this is a dummy event 1.",
+      "workBy": "user1",
+      "ticketId": 1000,
+      "urgencyId": "Emergency",
+      "stateId": "Resolved",
+      "deviceText": "border6.dal",
+      "serviceText": "datartn-5"
+    }
+  ]
+}
+

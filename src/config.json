@@ -1,0 +1,13 @@
+{
+    "ets": {
+        "user": "srs",
+        "password": "finadmin",
+        "connectString": "oracle7.dev.itlab.internap.com/icdtst71"
+    },
+    "uber": {
+        "host": "ubersmith-api.voxel.net",
+        "user": "sys-grover",
+        "password": "needtoknow"
+    }
+}
+
