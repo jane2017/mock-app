@@ -39,6 +39,7 @@
     var service = apiService;
     
     homeCtrl.allEvents = [];
+    homeCtrl.headers = [];
     
     homeCtrl.getAll = function () {
       //console.log('current all:', homeCtrl.allEvents);
@@ -50,6 +51,8 @@
         .then(function (res) {
           console.log('controller get data:', res);
           homeCtrl.allEvents = res.events;
+          homeCtrl.headers = Object.keys(homeCtrl.allEvents[0]);
+          console.log('headers:', homeCtrl.headers);
           return homeCtrl.allEvents.events;
         })
         .catch(function (message) {

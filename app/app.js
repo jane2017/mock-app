@@ -8,6 +8,7 @@ angular.module('mets', [
   'mets.services.api',
   'mets.home',
   'mets.event',
+  'mets.search',
   'mets.admin'
 ])
 .config(function metsConfig($stateProvider, $urlRouterProvider) {
