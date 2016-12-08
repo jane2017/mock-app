@@ -7,13 +7,13 @@
       </thead>
       <tbody>
         <tr ng-repeat="event in events">
-          <!-- TODO: How to conbine these two?-->
-          <td ng-repeat="(key,value) in event" ng-if="key=='eventOid'">
-            <div><a ui-sref='event({id:{{value}}})'>{{value}}
+          <!-- TODO: check performance on repeat -->
+          <td ng-repeat="(key,value) in event">
+            <div ng-if="key=='eventOid'">
+              <a ui-sref='event({id:{{value}}})'>{{value}}</a>
             </div>
+            <div ng-if="key!='eventOid'">{{value}}</div>
           </td>
-          <td ng-repeat="(key,value) in event" ng-if="key!='eventOid'">
-            {{value}}
         </tr>
       </tbody>
     </table>
