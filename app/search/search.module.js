@@ -25,6 +25,36 @@
     var searchCtrl = this;
     var service = apiService;
     
+    searchCtrl.searchData = {};
+    
+    var states = {
+      BeginOrStarted: ['Begin', 'Started'],
+      pending: ['Pending Notification',
+                'Pending Update',
+                'Pending Cancellation',
+                'Pending Reschedule',
+                'Pending Resolution'],
+      Notified: ['Notified'],
+      Cancelled: ['Cancelled'],
+      Rescheduled: ['Rescheduled'],
+      Resolved: ['Resolved']
+    };
+    
+    var urgentOptions = {
+      planned: "Planned",
+      unplanned: "Unplanned",
+      emergency: "Emergency",
+      routingOpt: "Routing Optimization",
+    };
+    
+    searchCtrl.getStateOptions = function () {
+      return Object.keys(states);
+    }
+
+    searchCtrl.getUrgentOptions = function () {
+      return Object.keys(urgentOptions);
+    }
+    
     // to be done
   }
   

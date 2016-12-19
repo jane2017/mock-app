@@ -1,3 +1,15 @@
-<div>
-  Searching events
+<div class="container-fluid">
+  <form class="input-group">
+   <!-- <input type="text" name="ago">-->
+    <select name="state">
+      <option ng-repeat="option in searchCtrl.getStateOptions()">  {{option}}
+      </option>
+    </select>
+    <select name="urgent">
+      <option ng-repeat="option in searchCtrl.getUrgentOptions()">  {{option}}
+      </option>
+    </select>
+    <input uib-datepicker-popup type="text" name="ago(hours)" value=24>
+    <input type="submit" name="search">
+  </form>
 </div>
