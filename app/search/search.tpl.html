@@ -1,15 +1,14 @@
 <div class="container-fluid">
   <form class="input-group">
    <!-- <input type="text" name="ago">-->
-    <select name="state">
-      <option ng-repeat="option in searchCtrl.getStateOptions()">  {{option}}
-      </option>
-    </select>
-    <select name="urgent">
-      <option ng-repeat="option in searchCtrl.getUrgentOptions()">  {{option}}
-      </option>
-    </select>
-    <input uib-datepicker-popup type="text" name="ago(hours)" value=24>
-    <input type="submit" name="search">
+    <label for="state"> state: </label>
+    <select name="state" ng-options="option for option in searchCtrl.getStateOptions()" ng-model="searchCtrl.searchData.state">
+    </select><br>
+    <label for="urgent"> urgent: </label>
+    <select name="urgent" ng-options="option for option in searchCtrl.getUrgentOptions()" ng-model="searchCtrl.searchData.urgent">
+    </select><br>
+    <label for="lasthours"> last(hrs): </label>
+    <input uib-datepicker-popup type="text" name="lasthours" value=24 ng-model="searchCtrl.searchData.hoursAgo"><br>
+    <input type="submit" name="search"><br>
   </form>
 </div>

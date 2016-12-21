@@ -25,7 +25,14 @@
     var searchCtrl = this;
     var service = apiService;
     
-    searchCtrl.searchData = {};
+    searchCtrl.searchData = {
+      state: "all",
+      urgent: "all",
+      hoursAgo: 24,
+      startDate: new Date,
+      endDate: new Date,
+      eventId: "all"
+    };
     
     var states = {
       BeginOrStarted: ['Begin', 'Started'],
@@ -48,10 +55,12 @@
     };
     
     searchCtrl.getStateOptions = function () {
+      console.log("get state:", searchCtrl.searchData);
       return Object.keys(states);
     }
 
     searchCtrl.getUrgentOptions = function () {
+      console.log("get urgent: ", searchCtrl.searchData);
       return Object.keys(urgentOptions);
     }
     
