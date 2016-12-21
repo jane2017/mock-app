@@ -54,16 +54,39 @@
       routingOpt: "Routing Optimization",
     };
     
+    searchCtrl.res = {};
+    
     searchCtrl.getStateOptions = function () {
-      console.log("get state:", searchCtrl.searchData);
+      //console.log("get state:", searchCtrl.searchData);
       return Object.keys(states);
     }
 
     searchCtrl.getUrgentOptions = function () {
-      console.log("get urgent: ", searchCtrl.searchData);
+      //console.log("get urgent: ", searchCtrl.searchData);
       return Object.keys(urgentOptions);
     }
     
+    searchCtrl.getResult = function() {
+      return searchCtrl.res;
+    }
+    
+    searchCtrl.getEvents = function () {
+      var rules = {};
+      rules.state = (searchCtrl.searchData.state != 'all')?states[searchCtrl.searchData.state] : 'all';
+      rules.urgent = (searchCtrl.searchData.urgent != 'all')?  urgentOptions[searchCtrl.searchData.urgent] : 'all';
+      console.log("rules:", rules);
+      service.searchEvents(rules)
+        .then(function (res) {
+          console.log('search controller get data:', res);
+          searchCtrl.res = res.events;
+        searchCtrl
+          return searchCtrl.res;
+        })
+        .catch(function (message) {
+          console.log("search response error:", message);
+          return [];
+        });
+    };
     // to be done
   }
   

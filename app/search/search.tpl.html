@@ -3,12 +3,18 @@
    <!-- <input type="text" name="ago">-->
     <label for="state"> state: </label>
     <select name="state" ng-options="option for option in searchCtrl.getStateOptions()" ng-model="searchCtrl.searchData.state">
+      <option value="">{{searchCtrl.searchData.state}}</option>
     </select><br>
     <label for="urgent"> urgent: </label>
     <select name="urgent" ng-options="option for option in searchCtrl.getUrgentOptions()" ng-model="searchCtrl.searchData.urgent">
+      <option value="">{{searchCtrl.searchData.urgent}}</option>
     </select><br>
     <label for="lasthours"> last(hrs): </label>
     <input uib-datepicker-popup type="text" name="lasthours" value=24 ng-model="searchCtrl.searchData.hoursAgo"><br>
-    <input type="submit" name="search"><br>
+    <input type="submit" name="search" ng-click="searchCtrl.getEvents()"><br>
   </form>
+  
+  <div class="col-xs-12 col-sm-12 col-lg-12">
+    <event-table events="searchCtrl.getResult()" headers="searchCtrl.headers"></event-table>
+  </div>
 </div>

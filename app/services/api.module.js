@@ -12,13 +12,15 @@
     
     function getRequest(path, data) {
       var deferred = $q.defer();
-      var req = {
+       console.log("---- data:", data);
+      var conf = {
         url: url + path,
         method: "GET",
-        data: data
+        params: data
       };
       
-      $http(req)
+      console.log('request conf:', conf);
+      $http(conf)
         .success(function (data, status, header, config) {
           console.log('service got data:', data);
           deferred.resolve(data);
@@ -40,6 +42,11 @@
       var path = 'event/' + id;
       console.log('called getEvent, path:', path);
       return getRequest(path);
+    };
+    
+    service.searchEvents = function (data) {
+      console.log('called searchEvents with data:', data);
+      return getRequest('search', data);
     };
     
     return service;

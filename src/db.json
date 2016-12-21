@@ -1,6 +1,45 @@
 {
   "events": [
     {
+      "eventOid": 1000,
+      "startDate": 1479146361,
+      "endDate": 1479148361,
+      "remindDate": 1479147361,
+      "description": "this is a dummy event 1.",
+      "workBy": "user1",
+      "ticketId": 1000,
+      "urgencyId": "Planned",
+      "stateId": "Pending Update",
+      "deviceText": "border6.dal",
+      "serviceText": "datartn-5"
+    },
+    {
+      "eventOid": 1001,
+      "startDate": 1479146361,
+      "endDate": 1479148361,
+      "remindDate": 1479147361,
+      "description": "this is a dummy event 1.",
+      "workBy": "user1",
+      "ticketId": 1001,
+      "urgencyId": "Unplanned",
+      "stateId": "Notified",
+      "deviceText": "border6.dal",
+      "serviceText": "datartn-5"
+    },
+    {
+      "eventOid": 1002,
+      "startDate": 1479146361,
+      "endDate": 1479148361,
+      "remindDate": 1479147361,
+      "description": "this is a dummy event 1.",
+      "workBy": "user1",
+      "ticketId": 1002,
+      "urgencyId": "Planned",
+      "stateId": "Started",
+      "deviceText": "border6.dal",
+      "serviceText": "datartn-5"
+    },
+    {
       "eventOid": 1474,
       "startDate": 1479146361,
       "endDate": 1479148361,
@@ -8,8 +47,8 @@
       "description": "this is a dummy event 1.",
       "workBy": "user1",
       "ticketId": 1000,
-      "urgencyId": "Plannded",
-      "stateId": "Pending update",
+      "urgencyId": "Planned",
+      "stateId": "Pending Update",
       "deviceText": "border6.dal",
       "serviceText": "datartn-5"
     },
@@ -21,8 +60,8 @@
       "description": "this is a dummy event 1.",
       "workBy": "user1",
       "ticketId": 1000,
-      "urgencyId": "Unplannded",
-      "stateId": "Pending notification",
+      "urgencyId": "Routing Optimization",
+      "stateId": "Pending Notification",
       "deviceText": "border6.dal",
       "serviceText": "datartn-5"
     },
