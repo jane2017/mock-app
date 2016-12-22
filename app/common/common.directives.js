@@ -12,7 +12,7 @@
       scope: {
         events: '<',
         headers: '<'
-      },
+      }
 /*      controller: EventTableDirectiveController,
       controllerAs: eventTblDirCtrl,
       bindToController: true,
