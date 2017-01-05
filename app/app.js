@@ -5,6 +5,7 @@
   angular.module('mets', [
     'ngAnimate',
     'ui.router',
+   /* 'ui.bootstrap',*/
     'mets.common',
     'mets.services.api',
     'mets.home',

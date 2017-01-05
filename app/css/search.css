@@ -1,0 +1,37 @@
+@import 'variables.less';
+
+.form-group{
+  .restore-label {
+    font-size:10px;
+    margin-top:0px;
+    color:#FFFFFF
+  }
+}
+
+.form-date{
+    width:200px;
+}
+
+search-options label {
+  font-size: 10px;
+  margin-top: 2px;
+  color: @mets-main-blue;
+}
+
+search-options select {
+  font-size: 10px;
+  margin-top: 2px;
+  color: @mets-main-blue;
+}
+
+.time-input {
+  font-size: 5px;
+  margin-top: 2px;
+  color: @mets-text-light-gray;
+}
+
+.input-submit {
+  font-size: 5px;
+  margin-top: 2px;
+  color: rgb(229, 235, 240);
+}

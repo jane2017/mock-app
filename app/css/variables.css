@@ -1,0 +1,67 @@
+/**
+ * These are the variables used throughout the application. This is where 
+ * overwrites that are not specific to components should be maintained.
+ */
+
+@icon-font-path: 'fonts/';
+
+/**
+ * Typography-related.
+ */
+
+@sansFontFamily: 'Neue Helvetica W01', sans-serif;
+
+/**
+ * Color-related.
+ */
+
+// General colors
+@mets-main-blue: rgb(26, 39, 50);
+@mets-light-blue: rgb(144, 183, 202);
+@mets-light-shadow-blue: rgb(229, 235, 240);
+@mets-main-orange: rgb(244, 122, 31);
+@mets-orange: rgb(244, 122, 31);
+
+@default-btn: rgb(86, 95, 107);
+@mets-blue-gray: rgb(89, 96, 109);
+@mets-light-gray: rgb(128, 128, 128);
+
+@mets-text-light-gray: rgb(146,146,146);
+@mets-text-light: rgb(86, 95, 107);
+@mets-text-dark: rgb(49, 61, 71);
+
+@mets-light-gray-text: rgb(86, 95, 107);
+@mets-light-shadow-gray: rgb(235, 237, 241);
+@mets-gray-text: rgb(142, 140, 147);
+
+@mets-gray-line: rgb(224, 223, 225);
+@mets-hard-gray-line: rgb(192, 190, 194);
+
+@mets-border-light: rgb(223, 223, 223);
+
+@mets-hard-gray-line: rgb(192, 190, 194);
+
+// Nav colors
+@mets-nav-tab-bg-color: rgb(212, 215, 218);
+@mets-nav-tab-border-color: rgb(49, 61, 71);
+@mets-nav-tab-text-color: rgb(255, 255, 255);
+@mets-nav-tab-active-bg-color: @mets-main-blue;
+@mets-nav-tab-active-border-color: rgb(90, 95, 102);
+@mets-nav-tab-active-text-color: @mets-main-orange;
+
+//Gradient
+@startColor: rgb(212, 215, 218);
+@endColor: rgb(192, 197, 200);
+
+//Bar colors
+@mets-bar-bg-color: rgb(49, 61, 71);
+@mets-line-divider: rgb(86, 95, 107);
+
+// Alerts
+@dark-green: rgb(59, 156, 71);
+@light-green: rgb(216, 235, 218);
+@dark-red: rgb(195, 74, 44);
+@light-red: rgb(243, 219, 213);
+
+//Animations
+@mets-animate-fade: all 0.2s ease-in-out 0s;

@@ -1,23 +1,38 @@
 <div class="container-fluid">
-  <form class="input-group">
-   <!-- <input type="text" name="ago">-->
-    <search-options options="searchCtrl.getStateOptions()" label="State:" value="searchCtrl.searchData.state" default-value="searchCtrl.searchData.state">
-    </search-options>
-    <search-options options="searchCtrl.getUrgentOptions()" label="Urgency:" value="searchCtrl.searchData.urgent" default-value="searchCtrl.searchData.urgent">
-    </search-options>
-<!--    <label for="state"> state: </label>
-    <select name="state" ng-options="option for option in searchCtrl.getStateOptions()" ng-model="searchCtrl.searchData.state">
-      <option value="">{{searchCtrl.searchData.state}}</option>
-    </select><br>
-    <label for="urgent"> urgent: </label>
-    <select name="urgent" ng-options="option for option in searchCtrl.getUrgentOptions()" ng-model="searchCtrl.searchData.urgent">
-      <option value="">{{searchCtrl.searchData.urgent}}</option>
-    </select><br>-->
-    <label for="lasthours"> last(hrs): </label>
-    <input uib-datepicker-popup type="text" name="lasthours" value=24 ng-model="searchCtrl.searchData.hoursAgo">
-    <input type="submit" name="search" ng-click="searchCtrl.getEvents()">
-  </form>
-  <div class="col-xs-12 col-sm-12 col-lg-12">
-    <event-table events="searchCtrl.getResult()" headers="searchCtrl.headers"></event-table>
+  <div class="row">
+  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    <!--<form class="input-group">-->
+    <form class="navbar">
+     <!-- <input type="text" name="ago">-->
+      <search-options options="searchCtrl.getStateOptions()" label="State:" bind-value="searchCtrl.searchData.state" default-value="searchCtrl.searchData.state">
+      </search-options>
+      <search-options options="searchCtrl.getUrgentOptions()" label="Urgency:" bind-value="searchCtrl.searchData.urgent" default-value="searchCtrl.searchData.urgent">
+      </search-options>
+      <search-input label="last(hrs):" bind-value="searchCtrl.searchData.hoursAgo" default-value="24" is-time="false">
+      </search-input>
+      <div class="time-input">
+        <search-input label="Start:" bind-value="searchCtrl.searchData.startDate" default-value="" is-time="true">
+        </search-input>
+        <search-input label="End:" bind-value="searchCtrl.searchData.endDate" default-value="" is-time="true">
+        </search-input>
+      </div>
+<!--      <div class="input-group input-daterange">
+        <input type="text" class="form-control" value="2016-04-05">
+        <span class="input-group-addon">to</span>
+        <input type="text" class="form-control" value="2016-04-19">
+      </div>-->
+<!--      <label for="lasthours"> last(hrs): </label><br>
+      <input type="text" name="lasthours" value=24 ng-model="searchCtrl.searchData.hoursAgo"><br>
+      <label for="starttime"> Start time: </label><br>
+      <input uib-datepicker-popup type="text" name="starttime" ng-model="searchCtrl.searchData.startDate">
+      <label for="endttime"> End time: </label><br>
+      <input uib-datepicker-popup type="text" name="endttime" ng-model="searchCtrl.searchData.endDate"><br>
+      <br>-->
+      <input class="input-submit" type="submit" value="Search" ng-click="searchCtrl.getEvents()"><br>
+    </form>
+  </div>
+  <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+    <event-table events="searchCtrl.getResult()" headers="searchCtrl.getHeaders()"></event-table>
+  </div>
   </div>
 </div>

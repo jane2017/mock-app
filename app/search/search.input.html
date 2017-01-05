@@ -1,0 +1,15 @@
+<label for="sname"> {{label}} </label><br>
+<div ng-if="isTime == true">
+  <p class="input-group form-date">
+    <input uib-datepicker-popup ng-model="bindValue" name="sname" class="form-control" value={{defaultValue}} required>
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default" ng-click="true"><i class="glyphicon glyphicon-calendar"></i></button>
+      </span>
+  </p>
+
+<!--  <input uib-datepicker-popup="dd/MM/yyyy" name="sname" type="text" ng-model="bindValue" value={{defaultValue}} required>-->
+</div>
+<div ng-if="isTime != true">
+  <input name="sname" type="text" ng-model="bindValue" value={{defaultValue}}>
+</div>
+</input><br>

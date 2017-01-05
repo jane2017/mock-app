@@ -10,7 +10,28 @@ var express = require('express');
 var app = express();
 var db = require('./db.json');
 
+var Q = require('q');
+/*var oracledb = require('oracledb');
+var odbSettings = {
+  "user": "srs",
+  "password": "finadmin",
+  "connectString": "oracle7.dev.itlab.internap.com/icdtst71"
+};*/
+
 function metsServer () {
+
+/*  function connect(options) {
+    var deferred = Q.defer();
+    oracledb.getConnection(options, function (err, connection) {
+      if (err) {
+        util.log('connection failed');
+        util.log(err.message);
+        return deferred.reject(err);
+      }
+      return deferred.resolve(connection);
+    });
+    return deferred.promise;
+  }*/
 
   function getEvent(id) {
     var events = db.events;
@@ -64,6 +85,15 @@ function metsServer () {
       var data = {"events":events};
       res.json(data);
     });
+
+/*    app.get('/api/allevents', function(req, res) {
+       Q.all([connect(odbSettings)])
+       .then(function(connections) {
+          conn = connections[0];
+          var queries = [];
+          console.log("connected to oracle db!", conn);
+       });
+    });*/
 
     app.listen(3000, function () {
       console.log('Example app listening on port 3000!')

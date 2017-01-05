@@ -3,20 +3,36 @@
 
   angular.module('mets.search')
     //.controller('eventTableController', EventTableDirectiveController)
-    .directive('searchOptions', SearchOptionsDirective);
+    .directive('searchOptions', SearchOptionsDirective)
+    .directive('searchInput', SearchInputDirective);
   
-  SearchOptionsDirective.inject = [];
+  //SearchOptionsDirective.inject = [];
   function SearchOptionsDirective() {
     var ddo = {
       templateUrl: 'search/search.options.html',
       scope: {
         options: '&',
-        value: '=',
+        bindValue: '=',
         defaultValue: '<',
         label: '@'
       }
-/*      transclude: true*/
     };
     return ddo;
   }
+  
+  //SearchInputDirective.inject = [];
+  function SearchInputDirective() {
+    var ddo = {
+      templateUrl: 'search/search.input.html',
+      scope: {
+        bindValue: '=',
+        defaultValue: '<',
+        label: '@',
+        dateFormat: '@',
+        isTime: '<'
+      }
+    };
+    return ddo;
+  }
+  
 })();

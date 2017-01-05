@@ -29,8 +29,8 @@
       state: "all",
       urgent: "all",
       hoursAgo: 24,
-      startDate: new Date(),
-      endDate: new Date(),
+      startDate: "",
+      endDate: "",
       eventId: "all"
     };
     
@@ -66,6 +66,7 @@
     ];
     
     searchCtrl.res = {};
+    searchCtrl.headers = [];
     
     searchCtrl.getStateOptions = function () {
       console.log("called get state:");
@@ -81,6 +82,10 @@
       return searchCtrl.res;
     };
     
+    searchCtrl.getHeaders = function () {
+      return searchCtrl.headers;
+    };
+    
     searchCtrl.getEvents = function () {
       var rules = {};
       rules.state = (searchCtrl.searchData.state !== 'all') ? states[searchCtrl.searchData.state] : 'all';
@@ -90,6 +95,7 @@
         .then(function (res) {
           console.log('search controller get data:', res);
           searchCtrl.res = res.events;
+          searchCtrl.headers = Object.keys(searchCtrl.res[0]);
           //return searchCtrl.res;
         })
         .catch(function (message) {
