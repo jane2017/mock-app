@@ -38,14 +38,98 @@
     var homeCtrl = this;
     var service = apiService;
     
+    // TO DO: get state names from DB
+    var stateNames = [
+      "BeginOrStarted",
+      "pending",
+      "Notified",
+      "Cancelled",
+      "Rescheduled",
+      "Resolved"
+    ];
+    
+     // TO DO: get urgent names from DB
+    var urgentNames = [
+      "Planned",
+      "Unplanned",
+      "Emergency",
+      "Routing Optimization"
+    ];
+    
+    var states = {
+      BeginOrStarted: ['Begin', 'Started'],
+      pending: ['Pending Notification',
+                'Pending Update',
+                'Pending Cancellation',
+                'Pending Reschedule',
+                'Pending Resolution'],
+      Notified: ['Notified'],
+      Cancelled: ['Cancelled'],
+      Rescheduled: ['Rescheduled'],
+      Resolved: ['Resolved']
+    };
+    
+    
     homeCtrl.allEvents = [];
     homeCtrl.headers = [];
+    
+    //homeCtrl.searchResult = [];
+    //homeCtrl.searchHeaders = [];
     
     homeCtrl.getAll = function () {
       //console.log('current all:', homeCtrl.allEvents);
       return homeCtrl.allEvents;
     };
 
+    homeCtrl.getStateNames = function () {
+      return stateNames;
+    };
+    
+    homeCtrl.getUrgentNames = function () {
+      return urgentNames;
+    };
+    
+
+    homeCtrl.getEventsByUrgency = function (urgency) {
+      // TODO: get from backend or from local?
+/*      var data = {
+        urgent: urgency,
+        state: "all"
+      };
+      
+      service.searchEvents(data)
+        .then(function (res) {
+          console.log('home controller get search by urgency:', res);
+          homeCtrl.searchResult = res.events;
+          homeCtrl.searchHeaders = Object.keys(homeCtrl.searchResult[0]);
+        })
+        .catch(function (message) {
+          console.log("home searchEvents response error:", message);
+        });*/
+      var events = homeCtrl.allEvents;
+      var len = 0;
+      
+      len = events.filter(function (value) {
+        return value.urgencyId === urgency;
+      }).length;
+      
+      return len;
+    };
+    
+    homeCtrl.getEventsByState = function (state) {
+      // TODO: get from backend or from local?
+      var events = homeCtrl.allEvents;
+      var len = 0;
+      
+      var substates = states[state];
+      len = events.filter(function(value){
+        return substates.indexOf(value.stateId) > -1;
+      }).length;
+      
+      return len;
+      
+    };
+    
     homeCtrl.events = function () {
       service.getEvents()
         .then(function (res) {
@@ -53,14 +137,15 @@
           homeCtrl.allEvents = res.events;
           homeCtrl.headers = Object.keys(homeCtrl.allEvents[0]);
           console.log('headers:', homeCtrl.headers);
-          return homeCtrl.allEvents.events;
+          //return homeCtrl.allEvents.events;
         })
         .catch(function (message) {
           console.log("error:", message);
-          return [];
+          //return [];
         });
     };
 
+    // TODO: need a trig to get all/full screen of events
     homeCtrl.events();
   }
   

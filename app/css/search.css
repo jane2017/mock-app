@@ -1,37 +1,38 @@
-@import 'variables.less';
+@import 'variables.css';
 
 .form-group{
   .restore-label {
-    font-size:10px;
+    font-size:12px;
     margin-top:0px;
     color:#FFFFFF
   }
 }
 
-.form-date{
-    width:200px;
+.form-date {
+    width:150px;
 }
 
-search-options label {
-  font-size: 10px;
-  margin-top: 2px;
+search-options {
+    width:150px;
+}
+
+
+search-options label, search-input label {
+  font-size: 16px;
+  margin-top: 10px;
   color: @mets-main-blue;
 }
 
-search-options select {
-  font-size: 10px;
+search-options select, search-input input {
+  font-size: 16px;
   margin-top: 2px;
+  margin-right: 10px;
+  width: 100%;
   color: @mets-main-blue;
 }
 
-.time-input {
-  font-size: 5px;
-  margin-top: 2px;
-  color: @mets-text-light-gray;
-}
-
-.input-submit {
-  font-size: 5px;
-  margin-top: 2px;
+#input-submit {
+  font-size: 16px;
+  margin-top: 10px;
   color: rgb(229, 235, 240);
 }

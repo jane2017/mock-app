@@ -17,7 +17,7 @@
  * definitions in our imported stylesheets.
  */
 
-@import 'variables.less';
+@import 'variables.css';
 
 /**
  * Font Awesome Less
@@ -31,7 +31,7 @@
  * Typography
  */
 
-@font-face{
+/*@font-face{
   font-family:"Neue Helvetica W01";
   src:url("fonts/helvetica/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot?#iefix");
   src:url("fonts/helvetica/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot?#iefix") format("eot"),
@@ -73,7 +73,7 @@
 
 @font-face{font-family:"Neue Helvetica W01_n7";
   src:url("fonts/helvetica/bb37f770-d450-4f24-af2b-3a81bf640315.eot?#iefix") format("eot")
-}
+}*/
 
 
 body{

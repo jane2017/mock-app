@@ -1,5 +1,7 @@
 <div>
-  <ul class="container tree">
+  <li ng-repeat="type in types"> {{type}} ({{getSubtotal({data:type})}})
+  </li>
+<!--  <ul class="container tree">
     <li>All events by state ( {{homeCtrl.allEvents.length}})</li>
       <ul>
         <li>Pending</li>
@@ -17,5 +19,6 @@
         <li>RoutingOpt</li>
         <li>Internal</li>
       </ul>
-  </ul>
+    <li ng-repeat="type in types"> {{type}} </li>
+  </ul>-->
 </div>
