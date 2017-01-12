@@ -66,6 +66,45 @@
       "serviceText": "datartn-5"
     },
     {
+      "eventOid": 1003,
+      "startDate": 1479146361,
+      "endDate": 1479148361,
+      "remindDate": 1479147361,
+      "description": "this is a dummy event 1.",
+      "workBy": "user1",
+      "ticketId": 1003,
+      "urgencyId": "Planned",
+      "stateId": "Cancelled",
+      "deviceText": "border6.dal",
+      "serviceText": "datartn-5"
+    },
+    {
+      "eventOid": 1004,
+      "startDate": 1479146361,
+      "endDate": 1479148361,
+      "remindDate": 1479147361,
+      "description": "this is a dummy event 1.",
+      "workBy": "user1",
+      "ticketId": 1004,
+      "urgencyId": "Unplanned",
+      "stateId": "Rescheduled",
+      "deviceText": "border6.dal",
+      "serviceText": "datartn-5"
+    },
+    {
+      "eventOid": 1005,
+      "startDate": 1479146361,
+      "endDate": 1479148361,
+      "remindDate": 1479147361,
+      "description": "this is a dummy event 1.",
+      "workBy": "user1",
+      "ticketId": 1002,
+      "urgencyId": "Planned",
+      "stateId": "Resolved",
+      "deviceText": "border6.dal",
+      "serviceText": "datartn-5"
+    },
+    {
       "eventOid": 1476,
       "startDate": 1479146361,
       "endDate": 1479148361,

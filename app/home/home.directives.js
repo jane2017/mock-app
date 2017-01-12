@@ -10,7 +10,9 @@
       templateUrl: 'home/home-event-types.tpl.html',
       scope: {
         types: '<',
-        getSubtotal: '&'
+        counts: '<',
+        isstate: '<',
+        eventFilter: '&'
       }
     };
     return ddo;

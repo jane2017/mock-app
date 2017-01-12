@@ -78,7 +78,7 @@
 
 body{
   font-family: "Neue Helvetica W01", Helvetica, Arial, sans-serif !important;
-  color: @miro-main-blue;
+  color: @mets-main-blue;
   background-color: #fff !important;
   font-weight: normal;
 }
@@ -113,14 +113,14 @@ h1 {
 h1.subtitle {
   font-size: 19px;
   padding: 6px 0 0 15px;
-  color: @miro-main-blue;
+  color: @mets-main-blue;
   margin: 0;
 }
 
 h2.subtitle {
   font-size: 1.2em;
-  background-color: @miro-light-shadow-blue;
-  border-left: 8px solid @miro-light-blue;
+  background-color: @mets-light-shadow-blue;
+  border-left: 8px solid @mets-light-blue;
   padding: 6px 5px 3px 5px;
   font-weight: bold;
   margin: 30px 0 40px 0;
@@ -150,7 +150,7 @@ h2.subtitle {
 
 .hr {
   height: 1px;
-  border-bottom: 1px dashed @miro-border-light;
+  border-bottom: 1px dashed @mets-border-light;
   width: 100%;
   margin-top: 24px;
 }
@@ -158,7 +158,7 @@ h2.subtitle {
 /**
  * Navigation
  */
-.navbar-miro {
+.navbar-mets {
   background-color: #fff;
   border: none;
   border-radius: 0;
@@ -181,7 +181,7 @@ h2.subtitle {
 
   .navbar-fixed {
     position: fixed;
-    background-color: @miro-main-blue;
+    background-color: @mets-main-blue;
     width: 100%;
     left: 0;
   }
@@ -201,6 +201,11 @@ h2.subtitle {
   .navbar-collapse {
     margin: 0 !important;
   }
+  
+  .navbar-collapse {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
 
   .navbar-nav {
     margin: 0 !important;
@@ -211,7 +216,7 @@ h2.subtitle {
   .navbar-nav > li {
     width: 100%;
     margin: 0px;
-    background-color: @miro-nav-tab-bg-color;
+    background-color: @mets-nav-tab-bg-color;
     border: none;
     height: 50px;
     display: table;
@@ -219,8 +224,8 @@ h2.subtitle {
     border-top-right-radius: 10px;
 
     a {
-      background-color: @miro-nav-tab-bg-color;
-      color: @miro-main-blue;
+      background-color: @mets-nav-tab-bg-color;
+      color: @mets-main-blue;
       text-align: center;
       width: 100%;
       height: 100%;
@@ -252,21 +257,21 @@ h2.subtitle {
   }
 
   .navbar-nav > .active {
-    background-color: @miro-nav-tab-active-bg-color;
-    color: @miro-nav-tab-active-text-color;
+    background-color: @mets-nav-tab-active-bg-color;
+    color: @mets-nav-tab-active-text-color;
     border-left: 1px none;
     border-right: 1px none;
   }
   .navbar-nav > .active > a,
   .navbar-nav > .active > a:hover,
   .navbar-nav > .active > a:focus {
-    background-color: @miro-nav-tab-active-bg-color;
-    color: @miro-nav-tab-text-color;
+    background-color: @mets-nav-tab-active-bg-color;
+    color: @mets-nav-tab-text-color;
   }
 
   .navbar-nav > li a:hover {
-    color: @miro-nav-tab-text-color;
-    background-color: @miro-orange;
+    color: @mets-nav-tab-text-color;
+    background-color: @mets-orange;
   }
 
   .navbar-brand {
@@ -276,7 +281,7 @@ h2.subtitle {
     margin-top: -25px;
   }
 
-  .navbar-brand > .miro-logo {
+  .navbar-brand > .mets-logo {
     width: 100%;
     max-width: 150px;
   }
@@ -288,7 +293,7 @@ h2.subtitle {
 
 .header-sub-menu {
   width: 100%;
-  background-color: @miro-main-blue;
+  background-color: @mets-main-blue;
   min-height: 57px;
 }
 
@@ -298,15 +303,16 @@ h2.subtitle {
 footer {
   width: 100%;
   height: 50px;
-  background-color: @miro-main-blue;
-  color: @miro-light-blue;
+  background-color: lightblue; //@mets-main-blue;
+  color: blue;  //@mets-light-blue;
   font-size: 14px;
   padding-top: 22px;
   z-index: 11;
+  text-align: center;
 
-  .miro-copyright {
+  .mets-copyright {
     padding-left: 15px;
-    .miro-logo{
+    .mets-logo{
       width: 100%;
       max-width: 86px;
       width:auto;
@@ -314,7 +320,7 @@ footer {
     }
   }
 
-  .footer-links {
+/*  .footer-links {
     text-align: right;
     padding-right: 10px;
     font-weight: normal;
@@ -325,16 +331,146 @@ footer {
     opacity: 0.5;
   }
   .footer-links a:hover {
-    color: @miro-main-orange;
+    color: @mets-main-orange;
     text-decoration: none;
     opacity: 1;
-  }
+  }*/
 }
 
 /**
  * General Styles
  */
 
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  /**
+   * Navigation
+   */
+  .navbar-mets {
+    min-height: 50px;
+    max-height: 65px;
+    height: 100%;
+    padding-top: 20px;
+    position: relative;
+    margin-bottom: 0 !important;
+
+    .navbar-collapse {
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+
+    .navbar-nav {
+      width: auto;
+    }
+    .navbar-nav > li {
+      border-bottom: none;
+      width: 110px;
+      margin: 0px 1px;
+      height: 45px;
+      font-size: 12px;
+
+      a {
+        width: 100%;
+        height: 100%;
+        padding: 3px 3px 0 3px;
+
+        br {
+          display: inline;
+        }
+      }
+    }
+    .navbar-nav > li:last-child{
+      margin-left: 0;
+    }
+
+    .navbar-nav > li:first-child{
+      border-right: none;
+    }
+
+    .navbar-brand,
+    .container .navbar-brand {
+      height: 70px;
+      line-height: 20px;
+      margin-left: 0;
+      margin-top: -25px;
+      padding: 5px 15px 5px 7px;
+    }
+
+    .navbar-brand > .mets-logo {
+      width: 100%;
+      max-width: 120px;
+    }
+  }
+    .navbar-brand-text{
+          float:left;
+          padding:5px 16px 5px 15px;
+          font-size:2em;
+          font-weight:bold;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+  /**
+   * Navigation
+   */
+  .navbar-mets {
+    min-height: 50px;
+    max-height: 75px;
+    height: 100%;
+    padding-top: 25px;
+
+    .navbar-nav > li,
+    .navbar-nav > .active {
+      width: 110px;
+      margin: 0px 2px;
+      height: 50px;
+      font-size: 14px;
+      float: left;
+
+      a {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .navbar-brand,
+    .container .navbar-brand {
+      height: 70px;
+      line-height: 20px;
+      margin-left: -15px;
+      padding: 5px 16px 5px 15px;
+    }
+
+    .navbar-brand > .mets-logo {
+      width: 100%;
+      max-width: 150px;
+          margin-top:27px;
+    }
+  }
+  .navbar-brand-text{
+          float:left;
+          padding:5px 16px 5px 15px;
+          font-size:2em;
+          font-weight:bold;
+  }
+
+  footer {
+    height: 62px;
+    font-size: 14px;
+
+    .mets-copyright {
+      padding-left: 18px;
+      .mets-logo {
+        max-width: 101px;
+      }
+    }
+  }
+}
 
 // new styles
 body {
@@ -410,7 +546,6 @@ body {
  @light-grey: #d3d3d3;
  @off-white:#e5e5e5;
  
- @import '../app/exchanges/exchanges.less';
- @import '../app/bgpSessions/bgpSessions.less';
+/* @import '../app/bgpSessions/bgpSessions.less';*/
  
  

@@ -71,14 +71,17 @@
     
     
     homeCtrl.allEvents = [];
+    homeCtrl.subEvents = [];
     homeCtrl.headers = [];
+    homeCtrl.statesCount = {};
+    homeCtrl.urgencyCount = {};
     
     //homeCtrl.searchResult = [];
     //homeCtrl.searchHeaders = [];
     
-    homeCtrl.getAll = function () {
+    homeCtrl.getEvents = function () {
       //console.log('current all:', homeCtrl.allEvents);
-      return homeCtrl.allEvents;
+      return homeCtrl.subEvents;
     };
 
     homeCtrl.getStateNames = function () {
@@ -88,7 +91,6 @@
     homeCtrl.getUrgentNames = function () {
       return urgentNames;
     };
-    
 
     homeCtrl.getEventsByUrgency = function (urgency) {
       // TODO: get from backend or from local?
@@ -107,41 +109,75 @@
           console.log("home searchEvents response error:", message);
         });*/
       var events = homeCtrl.allEvents;
-      var len = 0;
       
-      len = events.filter(function (value) {
+      homeCtrl.subEvents = events.filter(function (value) {
         return value.urgencyId === urgency;
-      }).length;
+      });
       
-      return len;
+      //console.log("urgency subevents:", urgency, homeCtrl.subEvents);
     };
     
     homeCtrl.getEventsByState = function (state) {
       // TODO: get from backend or from local?
       var events = homeCtrl.allEvents;
-      var len = 0;
       
       var substates = states[state];
-      len = events.filter(function(value){
+      homeCtrl.subEvents = events.filter(function(value){
         return substates.indexOf(value.stateId) > -1;
-      }).length;
-      
-      return len;
-      
+      });
+      //console.log("state subevents:", state, homeCtrl.subEvents);
     };
+   
+    homeCtrl.getStateCategory = function (state) {
+      var cat = "none";
+      
+      angular.forEach(states, function(value, key) {
+        if (value.indexOf(state) > -1) {
+          cat = key;
+        }
+      });
+      return cat;
+    }
+    
+    function updateCounts() {
+      homeCtrl.urgentCounts = {};
+      homeCtrl.stateCounts = {};
+      angular.forEach(homeCtrl.allEvents, function (value, key) {
+        //console.log("each event:", key, value);
+        // update urgency
+        if (homeCtrl.urgentCounts[value.urgencyId]) {
+          homeCtrl.urgentCounts[value.urgencyId] += 1;
+        }
+        else {
+          homeCtrl.urgentCounts[value.urgencyId] = 1;
+        }
+        // update state
+        var cat = homeCtrl.getStateCategory(value.stateId);
+        if (cat != "none" && homeCtrl.stateCounts[cat]) {
+          //console.log("add state:", cat, value.stateId)
+          homeCtrl.stateCounts[cat] += 1;
+        }
+        else if (cat != "none") {
+          //console.log("first state:", cat, value.stateId)
+          homeCtrl.stateCounts[cat] = 1;
+        }
+        else {
+          console.log("non exist state:", value.stateId)
+        }
+      });
+    }
     
     homeCtrl.events = function () {
       service.getEvents()
         .then(function (res) {
-          console.log('controller get data:', res);
+          //console.log('controller get data:', res);
           homeCtrl.allEvents = res.events;
+          homeCtrl.subEvents = res.events;
           homeCtrl.headers = Object.keys(homeCtrl.allEvents[0]);
-          console.log('headers:', homeCtrl.headers);
-          //return homeCtrl.allEvents.events;
+          updateCounts();
         })
         .catch(function (message) {
           console.log("error:", message);
-          //return [];
         });
     };
 
