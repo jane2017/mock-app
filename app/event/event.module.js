@@ -31,6 +31,7 @@
     //console.log('in EventController, $stateParams:', $stateParams);
     
     eventCtrl.id = $stateParams.id;
+    eventCtrl.newEvent = {};
     //console.log('in eventController, id:', eventCtrl.id);
     
     eventCtrl.event = function () {

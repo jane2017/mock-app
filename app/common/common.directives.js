@@ -3,7 +3,36 @@
 
   angular.module('mets.common')
     //.controller('eventTableController', EventTableDirectiveController)
-    .directive('eventTable', EventTableDirective);
+    .directive('eventTable', EventTableDirective)
+    .directive('eventItemOption', EventItemOptionDirective)
+    .directive('eventItemEdit', EventItemEditDirective);
+  
+  function EventItemOptionDirective() {
+    var ddo = {
+      templateUrl: 'search/search.options.html',
+      scope: {
+        options: '&',
+        bindValue: '=',
+        defaultValue: '<',
+        label: '@'
+      }
+    };
+    return ddo;
+  }
+  
+  function EventItemEditDirective() {
+    var ddo = {
+      templateUrl: 'search/search.input.html',
+      scope: {
+        bindValue: '=',
+        defaultValue: '<',
+        label: '@',
+        dateFormat: '@',
+        isTime: '<'
+      }
+    };
+    return ddo;
+  }
   
   EventTableDirective.inject = ['$compile'];
   function EventTableDirective($compile) {

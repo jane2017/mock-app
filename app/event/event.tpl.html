@@ -1,14 +1,34 @@
-<div>
-  id: {{eventCtrl.newEvent.eventOid}}
-  startDate: {{eventCtrl.newEvent.startDate}}
-  endDate: {{eventCtrl.newEvent.endDate}}
-  remindDate: {{eventCtrl.newEvent.remindDate}}
-  description: {{eventCtrl.newEvent.description}}
-  workBy: {{eventCtrl.newEvent.workBy}}
-  ticketId: {{eventCtrl.newEvent.ticketId}}
-  urgencyId: {{eventCtrl.newEvent.urgencyId}}
-  stateId: {{eventCtrl.newEvent.stateId}}
-  deviceText: {{eventCtrl.newEvent.deviceText}}
-  serviceText: {{eventCtrl.newEvent.serviceText}}
+<div class="container-fluid">
+  <div id="event-page" class="row">
+    <!-- responsive grid -->
+    <div class="col-sm-12 col-md-6">
+      <div class="col-sm-12 col-md-6">
+        <form class="event-id">
+          <event-item-edit label="id: " bind-value="eventCtrl.newEvent.eventOid" default-value="eventCtrl.newEvent.eventOid" is-time="false">
+          </event-item-edit>
+          <event-item-edit label="Start: " bind-value="eventCtrl.newEvent.startDate" default-value="eventCtrl.newEvent.startDate" is-time="true">
+          </event-item-edit>
+          <event-item-edit label="End: " bind-value="eventCtrl.newEvent.endDate" default-value="eventCtrl.newEvent.endDate" is-time="true">
+          </event-item-edit>
+        </form>
+      </div>
+      <div class="col-sm-12 col-md-6">
+         remindDate: {{eventCtrl.newEvent.remindDate}}<br>
+        description: {{eventCtrl.newEvent.description}}<br>
+        workBy: {{eventCtrl.newEvent.workBy}}
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <div class="col-sm-12 col-md-6">
+        ticketId: {{eventCtrl.newEvent.ticketId}}<br>
+        urgencyId: {{eventCtrl.newEvent.urgencyId}}<br>
+        stateId: {{eventCtrl.newEvent.stateId}}
+      </div>
+      <div class="col-sm-12 col-md-6">
+        deviceText: {{eventCtrl.newEvent.deviceText}}<br>
+        serviceText: {{eventCtrl.newEvent.serviceText}}
+      </div>
+    </div>
+  </div>
 </div>
 
