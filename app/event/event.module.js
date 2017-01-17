@@ -34,6 +34,15 @@
     eventCtrl.newEvent = {};
     //console.log('in eventController, id:', eventCtrl.id);
     
+    eventCtrl.isReadOnly = function (key, value) {
+      var ronly = false;
+      if (value !== '' ||
+          key === 'stateId') {
+        ronly = true;
+      }
+      return ronly;   
+    };
+    
     eventCtrl.event = function () {
       service.getEvent(eventCtrl.id)
         .then(function (res) {

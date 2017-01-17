@@ -13,7 +13,7 @@
       scope: {
         options: '&',
         bindValue: '=',
-        defaultValue: '<',
+//        defaultValue: '<',
         label: '@'
       }
     };
@@ -25,7 +25,7 @@
       templateUrl: 'search/search.input.html',
       scope: {
         bindValue: '=',
-        defaultValue: '<',
+//        defaultValue: '<',
         label: '@',
         dateFormat: '@',
         isTime: '<'

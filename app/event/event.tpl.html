@@ -3,12 +3,12 @@
     <!-- responsive grid -->
     <div class="col-sm-12 col-md-6">
       <div class="col-sm-12 col-md-6">
-        <form class="event-id">
-          <event-item-edit label="id: " bind-value="eventCtrl.newEvent.eventOid" default-value="eventCtrl.newEvent.eventOid" is-time="false">
+        <form class="event-item">
+          <event-item-edit label="id: " bind-value="eventCtrl.newEvent.eventOid" is-time="false">
           </event-item-edit>
-          <event-item-edit label="Start: " bind-value="eventCtrl.newEvent.startDate" default-value="eventCtrl.newEvent.startDate" is-time="true">
+          <event-item-edit label="Start: " bind-value="eventCtrl.newEvent.startDate" is-time="true">
           </event-item-edit>
-          <event-item-edit label="End: " bind-value="eventCtrl.newEvent.endDate" default-value="eventCtrl.newEvent.endDate" is-time="true">
+          <event-item-edit label="End: " bind-value="eventCtrl.newEvent.endDate" is-time="true">
           </event-item-edit>
         </form>
       </div>
