@@ -6,6 +6,7 @@
     'ngAnimate',
     'ui.router',
     'ui.bootstrap',
+    'xeditable',
     'mets.common',
     'mets.services.api',
     'mets.home',
@@ -16,10 +17,11 @@
     .config(function metsConfig($stateProvider, $urlRouterProvider) {
       $urlRouterProvider.otherwise('/home');
     })
-    .run(['$rootScope', '$state', '$stateParams', function run($rootScope, $state, $stateParams) {
+    .run(['$rootScope', '$state', '$stateParams', 'editableOptions', function run($rootScope, $state, $stateParams, editableOptions) {
       $rootScope.$state = $state;
       $rootScope.$stateParams = $stateParams;
       $rootScope.currentYear = new Date().getFullYear();
+      editableOptions.theme = 'bs3';
     }])
     .controller('metsCtrl', function MetsCtrl($scope, $location) {
       $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {

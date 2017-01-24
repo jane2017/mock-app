@@ -33,6 +33,6 @@ search-options select, search-input input {
 
 #input-submit {
   font-size: 16px;
-  margin-top: 10px;
-  color: rgb(229, 235, 240);
+  margin-top: 5px;
+  /*color: lightgrey; /*rgb(229, 235, 240);*/
 }

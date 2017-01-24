@@ -533,8 +533,58 @@ body {
   height:auto;
 }
 
-  
+/* Edit event form
+*/
 
+/*div[ng-app] { margin: 10px; }*/
+div[id="event-page"] {
+  height: auto;
+  padding: 5px 0;
+}
+
+/*form[name="editableForm"] {
+  height: auto;
+  padding: 5px 0;
+}*/
+
+form[name="editableForm"] .title {
+  display: inline-block;
+  font-weight: bold;
+  padding-top: 5px;
+  vertical-align: top;
+  min-width: 90px;
+}
+
+form[name="editableForm"]  .editable {
+  display: inline-block;
+  padding-top: 5px;
+  vertical-align: top;
+}
+
+form[name="editableForm"] select {
+ /* width: 120px;*/
+  width: 80%;
+}
+
+.event-item {
+  display: inline-block;
+  padding-top: 5px;
+  vertical-align: top;
+  min-width: 90px;
+  
+  width: 100%;
+}
+/* End of edit event form
+*/
+
+/* event table
+*/
+.event-table {
+  border:2px solid;
+  margin-right: 20px;
+  padding: 10px;
+  width: 100%;
+}
 
 /**
  * Now that all app-wide styles have been applied, we can load the styles for

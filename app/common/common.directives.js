@@ -2,14 +2,13 @@
   "use strict";
 
   angular.module('mets.common')
-    //.controller('eventTableController', EventTableDirectiveController)
     .directive('eventTable', EventTableDirective)
-    .directive('eventItemOption', EventItemOptionDirective)
-    .directive('eventItemEdit', EventItemEditDirective);
+    .directive('eventEditOption', EventEditOptionDirective);
+   /* .directive('eventEditInput', EventEditInputDirective);*/
   
-  function EventItemOptionDirective() {
+  function EventEditOptionDirective() {
     var ddo = {
-      templateUrl: 'search/search.options.html',
+      templateUrl: 'common/event-options.tpl.html',
       scope: {
         options: '&',
         bindValue: '=',
@@ -20,9 +19,9 @@
     return ddo;
   }
   
-  function EventItemEditDirective() {
+/*  function EventEditInputDirective() {
     var ddo = {
-      templateUrl: 'search/search.input.html',
+      templateUrl: 'common/event-inputs.tpl.html',
       scope: {
         bindValue: '=',
 //        defaultValue: '<',
@@ -32,7 +31,7 @@
       }
     };
     return ddo;
-  }
+  }*/
   
   EventTableDirective.inject = ['$compile'];
   function EventTableDirective($compile) {
@@ -42,23 +41,6 @@
         events: '<',
         headers: '<'
       }
-/*      controller: EventTableDirectiveController,
-      controllerAs: eventTblDirCtrl,
-      bindToController: true,
-      transclude: true*/
-/*      link: function(scope, element, attrs, ctrl) {
-        console.log('scope:', scope);
-        console.log('element:', element);
-        console.log('attrs:', attrs);
-        console.log('ctrl:', ctrl);
-        console.log('element.find:', element.find('td.ng-repeat'));
-        var html = "<a ui-sref='event'>{{value}}</a>";
-        var e = $compile(html)(scope);
-        //if (event.name == "eventOid") {
-        console.log('new elem:', e);
-        element.replaceWith(e);
-        //}
-      }*/
     };
     return ddo;
   }

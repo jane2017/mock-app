@@ -23,12 +23,43 @@
     });
   }
 
-  EventController.$inject = ['apiService', '$stateParams'];
-  function EventController(apiService, $stateParams) {
+  EventController.$inject = ['apiService', '$stateParams', '$filter'];
+  function EventController(apiService, $stateParams, $filter) {
     var eventCtrl = this;
     var service = apiService;
     
     //console.log('in EventController, $stateParams:', $stateParams);
+         
+    // TO DO: get urgent names from DB
+    var urgentNames = [
+      "Planned",
+      "Unplanned",
+      "Emergency",
+      "Routing Optimization"
+    ];
+    
+    // TO DO: get state names from DB
+    var stateNames = [
+      'Begin', 
+      'Started',
+      'Pending Notification',
+      'Pending Update',
+      'Pending Cancellation',
+      'Pending Reschedule',
+      'Pending Resolution',
+      'Notified',
+      'Cancelled',
+      'Rescheduled',
+      'Resolved'
+    ];
+    
+    eventCtrl.getStateNames = function () {
+      return stateNames;
+    };
+    
+    eventCtrl.getUrgentNames = function () {
+      return urgentNames;
+    };
     
     eventCtrl.id = $stateParams.id;
     eventCtrl.newEvent = {};
@@ -54,6 +85,21 @@
           console.log("error:", message);
           return [];
         });
+    };
+    
+    eventCtrl.saveEvent = function () {
+      //TODO: save data in eventCtrol.newEvent via api
+      console.log("new/updated event:", eventCtrl.newEvent);
+    };
+    
+    eventCtrl.opened = {};
+    
+    eventCtrl.openCal = function ($event, elementOpened) {
+      console.log("event:", $event);
+      console.log("elem:", elementOpened);
+      $event.preventDefault();
+      $event.stopPropagation();
+      $scope.opened[elementOpened] = !$scope.opened[elementOpened];
     };
     
     eventCtrl.event();
