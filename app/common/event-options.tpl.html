@@ -1,0 +1,6 @@
+<div> 
+  <span class="title">{{label}}</span>
+  <span editable-select="bindValue" e-ng-options="o for o in options()">
+      {{ (options() | filter:bindValue)[0] || 'not set' }}
+  </span>
+</div>

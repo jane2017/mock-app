@@ -1,0 +1,12 @@
+<div ng-if="isTime == true">
+  <span class="title">{{label}}</span>
+  <span editable-text="bindValue">
+    {{ bindValue | date : "short" }}
+  </span>
+</div>
+<div ng-if="isTime != true">
+  <span class="title">{{label}}</span>
+  <span editable-text="bindValue">
+    {{bindValue || 'empty'}}
+  </span>
+</div>
