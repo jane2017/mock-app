@@ -574,6 +574,11 @@ form[name="editableForm"] select {
   
   width: 100%;
 }
+
+.event-item .edit-save-button {
+  display: block;
+}
+
 /* End of edit event form
 */
 

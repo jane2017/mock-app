@@ -2,7 +2,7 @@
   <div id="event-page" class="row">
     <!-- responsive grid -->
     <form editable-form name="editableForm" onaftersave="eventCtrl.saveEvent()" class="event-item">
-      <div class="col-sm-12 col-md-5">
+      <div class="col-sm-12 col-md-6">
         <div>
           <span class="title">Event ID: </span>
           <span editable-text="eventCtrl.newEvent.eventOid" e-required>
@@ -58,7 +58,7 @@
             </event-item-edit>-->
 <!--        </div>-->
       </div>
-      <div class="col-sm-12 col-md-5">
+      <div class="col-sm-12 col-md-6">
         <!--<div class="col-sm-12 col-md-6">-->
           <event-edit-option label="Urgency Id: " bind-value="eventCtrl.newEvent.urgencyId" options="eventCtrl.getUrgentNames()" is-time="false">
             </event-edit-option>
@@ -83,25 +83,23 @@
           </span>
         </div>
       </div>
-      <div class="col-sm-12 col-md-2">
-        <!-- button to show form -->
-        <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
-          Edit
-        </button>
-        <!-- buttons to submit / cancel form -->
-        <div>
-          <span ng-show="editableForm.$visible">
-            <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">
-              Save
-            </button>
-            <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
-              Cancel
-            </button>
-          </span>
-        </div>
+    </form>
+    <div class="edit-save-button">
+      <!-- button to show form -->
+      <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+        Edit
+      </button>
+      <!-- buttons to submit / cancel form -->
+      <div>
+        <span ng-show="editableForm.$visible">
+          <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">
+            Save
+          </button>
+          <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
+            Cancel
+          </button>
+        </span>
       </div>
-  </form>
-    
-<!--  updated event: {{eventCtrl.newEvent}}-->
+    </div>  
   </div> <!--id="event-page" -->
 </div> <!--class="container-fluid"-->

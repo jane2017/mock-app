@@ -9,14 +9,13 @@
   EventConfig.inject = ['$stateProvider'];
   function EventConfig($stateProvider) {
     $stateProvider.state('event', {
-      url: '/event',
+      url: '/event/:id',
       templateUrl: 'event/event.tpl.html',
       controller: 'EventController',
       controllerAs: 'eventCtrl',
-      params: {
+     /* params: {
         id: 0
-      },
-      // resolve: {},
+      },*/
       data: {
         pageTitle: 'Event page'
       }

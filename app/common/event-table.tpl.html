@@ -12,7 +12,9 @@
           -->
           <td ng-repeat="(key,value) in event">
             <div ng-if="key=='eventOid'">
-              <a ui-sref='event({id:{{value}}})'>{{value}}</a>
+             <!-- <a ui-sref='event({id:{{value}}})'>{{value}}</a>-->
+              <a ui-sref='event({id:value})'>{{value}}
+              </a>
             </div>
             <div ng-if="key!='eventOid'">{{value}}</div>
            <!-- <div ng-else>{{value}}</div>-->
