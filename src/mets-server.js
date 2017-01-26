@@ -9,6 +9,7 @@ var configs = require('./config.json');
 var express = require('express');
 var app = express();
 var db = require('./db.json');
+var allevents = db.events;
 
 var Q = require('q');
 /*var oracledb = require('oracledb');
@@ -47,6 +48,17 @@ function metsServer () {
     return {}; 
   }
 
+  function updateEvent(event) {
+    console.log("update event id:", event.eventOid);
+    for (var i in allevents) {
+      if (allevents[i].eventOid === event.eventOid) {
+        allevents[i] = event; 
+        console.log("found event:", allevents[i].eventOid);
+        break;
+      }
+    }
+  }
+
   function searchEvents(data) {
     var events = db.events;
     var result = [];
@@ -69,6 +81,15 @@ function metsServer () {
       res.json(db);
     });
 
+    app.get('/api/update', function (req, res) {
+      res.setHeader("Access-Control-Allow-Origin", "*");
+      //console.log("update event :", req.query.event);
+      updateEvent(JSON.parse(req.query.event));
+      var data = {"event":""};
+      res.json(data);
+    });
+
+    // TODO: regex for id
     app.get('/api/event/:id', function (req, res) {
       res.setHeader("Access-Control-Allow-Origin", "*");
       console.log("get event id :", req.params.id);
@@ -76,7 +97,7 @@ function metsServer () {
       var data = {"event":event};
       res.json(data);
     });
-    
+
     app.get('/api/search', function (req, res) {
       res.setHeader("Access-Control-Allow-Origin", "*");
       console.log("searching :", req.query);

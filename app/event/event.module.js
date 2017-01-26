@@ -87,8 +87,17 @@
     };
     
     eventCtrl.saveEvent = function () {
-      //TODO: save data in eventCtrol.newEvent via api
       console.log("new/updated event:", eventCtrl.newEvent);
+      var data = {};
+      data.event = eventCtrl.newEvent;
+      
+      service.updateEvent(data)
+        .then(function (res) {
+          console.log('event controller update response:', res);
+        })
+        .catch(function (message) {
+          console.log("error:", message);
+        });
     };
     
     eventCtrl.opened = {};

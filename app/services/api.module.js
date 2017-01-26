@@ -49,6 +49,10 @@
       return getRequest('search', data);
     };
     
+    service.updateEvent = function (data) {
+      console.log('called updateEvent with data:', data);
+      return getRequest('update', data);
+    };
     return service;
   }
 })();
