@@ -26,8 +26,8 @@
     var service = apiService;
     
     searchCtrl.searchData = {
-      state: "all",
-      urgent: "all",
+      state: [],
+      urgent: [],
       hoursAgo: 24,
       startDate: "",
       endDate: "",
@@ -35,27 +35,20 @@
     };
     
     var stateOptions = [
-      "all",
-      "BeginOrStarted",
-      "pending",
-      "Notified",
-      "Cancelled",
-      "Rescheduled",
-      "Resolved"
+      'all',
+      'Begin',
+      "Started",
+      'Pending Notification',
+      'Pending Update',
+      'Pending Cancellation',
+      'Pending Reschedule',
+      'Pending Resolution',
+      'pending',
+      'Notified',
+      'Cancelled',
+      'Rescheduled',
+      'Resolved'
     ];
-    
-    var states = {
-      BeginOrStarted: ['Begin', 'Started'],
-      pending: ['Pending Notification',
-                'Pending Update',
-                'Pending Cancellation',
-                'Pending Reschedule',
-                'Pending Resolution'],
-      Notified: ['Notified'],
-      Cancelled: ['Cancelled'],
-      Rescheduled: ['Rescheduled'],
-      Resolved: ['Resolved']
-    };
     
     var urgentOptions = [
       "all",
@@ -88,7 +81,7 @@
     
     searchCtrl.getEvents = function () {
       var rules = {};
-      rules.state = (searchCtrl.searchData.state !== 'all') ? states[searchCtrl.searchData.state] : 'all';
+      rules.state = searchCtrl.searchData.state;
       rules.urgent = searchCtrl.searchData.urgent;
       //console.log("rules:", rules);
       service.searchEvents(rules)

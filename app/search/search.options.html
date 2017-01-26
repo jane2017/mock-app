@@ -1,6 +1,7 @@
 <div> 
   <label for="sname"> {{label}} </label>
-  <select name="sname" ng-options="option for option in options()" ng-model="bindValue">
-  <option value="">{{defaultValue}}</option>
+  <input type="text" ng-model="bindValue">
+  <select name="sname" ng-options="option for option in options()" ng-model="bindValue" multiple>
+  <!--<option value="">{{bindValue}}</option>-->
   </select><br>
 </div>
