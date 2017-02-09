@@ -5,9 +5,16 @@
         <ul class="container tree">
           <li>
             <a ng-click="homeCtrl.events()">
-              All events by state ({{homeCtrl.allEvents.length}})
+              All events by 1st state ({{homeCtrl.allEvents.length}})
             </a>
-            <home-event-types types="homeCtrl.getStateNames()" counts="homeCtrl.stateCounts" event-filter="homeCtrl.getEventsByState(data)">
+            <home-event-types types="homeCtrl.getState1Names()" counts="homeCtrl.stateCounts" event-filter="homeCtrl.getEventsByState1(data)">
+            </home-event-types>
+          </li>
+          <li>
+            <a ng-click="homeCtrl.events()">
+              All events by 2nd state ({{homeCtrl.allEvents.length}})
+            </a>
+            <home-event-types types="homeCtrl.getState2Names()" counts="homeCtrl.stateCounts" event-filter="homeCtrl.getEventsByState2(data)">
             </home-event-types>
           </li>
           <li>

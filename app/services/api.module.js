@@ -10,19 +10,20 @@
       service = {};
     var url = 'http://localhost:3000/api/';
     
-    function getRequest(path, data) {
+    function getRequest(path, indata) {
       var deferred = $q.defer();
-       console.log("---- data:", data);
+      var data = (indata)? indata:'';
+      
       var conf = {
         url: url + path,
         method: "GET",
         params: data
       };
       
-      console.log('request conf:', conf);
+      console.log('requesting:', conf);
+
       $http(conf)
         .success(function (data, status, header, config) {
-          console.log('service got data:', data);
           deferred.resolve(data);
         }).error(function (data, status, header, config) {
           console.log('request failed:' + path);
@@ -40,17 +41,14 @@
 
     service.getEvent = function (id) {
       var path = 'event/' + id;
-      console.log('called getEvent, path:', path);
       return getRequest(path);
     };
     
     service.searchEvents = function (data) {
-      console.log('called searchEvents with data:', data);
       return getRequest('search', data);
     };
     
     service.updateEvent = function (data) {
-      console.log('called updateEvent with data:', data);
       return getRequest('update', data);
     };
     return service;

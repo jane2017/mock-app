@@ -1,7 +1,7 @@
 <div>
   <li ng-repeat="type in types"> 
-    <span>     
-      <a ng-click="eventFilter({data:type})">{{type}} ({{counts[type]}})</a>
+    <span ng-if='type != "all"'>     
+      <a  ng-click="eventFilter({data:type})">{{type}} ({{counts[type]}})</a>
     </span>
   </li>
 </div>

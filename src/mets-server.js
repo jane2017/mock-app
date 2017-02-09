@@ -66,14 +66,19 @@ function metsServer () {
       data.urgent = ["all"];
     }
 
-    if (data.state == undefined || data.state === '') {
-      data.state = ["all"];
+    if (data.state1 == undefined || data.state1 === '') {
+      data.state1 = ["all"];
+    }
+
+    if (data.state2 == undefined || data.state2 === '') {
+      data.state2 = ["all"];
     }
 
     for (var i in events) {
         var event = events[i];
           if ( (data.urgent.includes('all') || data.urgent.includes(event.urgencyId))
-               && (data.state.includes('all') || data.state.includes(event.stateId))
+               && (data.state1.includes('all') || data.state1.includes(event.state1))
+               && (data.state2.includes('all') || data.state2.includes(event.state2))
              ) {
             //console.log("match event:", event.eventOid);
             result.push(event);

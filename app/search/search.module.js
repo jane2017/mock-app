@@ -20,13 +20,15 @@
     });
   }
   
-  SearchController.$inject = ['apiService'];
-  function SearchController(apiService) {
+  SearchController.$inject = ['apiService', 'commService'];
+  function SearchController(apiService, commService) {
     var searchCtrl = this;
     var service = apiService;
+    var comm = commService;
     
     searchCtrl.searchData = {
-      state: [],
+      state1: [],
+      state2: [],
       urgent: [],
       hoursAgo: 24,
       startDate: "",
@@ -34,41 +36,19 @@
       eventId: "all"
     };
     
-    var stateOptions = [
-      'all',
-      'Begin',
-      "Started",
-      'Pending Notification',
-      'Pending Update',
-      'Pending Cancellation',
-      'Pending Reschedule',
-      'Pending Resolution',
-      'pending',
-      'Notified',
-      'Cancelled',
-      'Rescheduled',
-      'Resolved'
-    ];
-    
-    var urgentOptions = [
-      "all",
-      "Planned",
-      "Unplanned",
-      "Emergency",
-      "Routing Optimization"
-    ];
-    
     searchCtrl.res = {};
     searchCtrl.headers = [];
     
-    searchCtrl.getStateOptions = function () {
-      console.log("called get state:");
-      return stateOptions;
+    searchCtrl.getState1Options = function () {
+      return comm.getState1Options();
     };
 
+    searchCtrl.getState2Options = function () {
+      return comm.getState2Options();
+    };
+    
     searchCtrl.getUrgentOptions = function () {
-      console.log("called get urgent: ");
-      return urgentOptions; //Object.keys(urgentOptions);
+      return comm.getUrgentOptions();
     };
     
     searchCtrl.getResult = function () {
@@ -81,7 +61,8 @@
     
     searchCtrl.getEvents = function () {
       var rules = {};
-      rules.state = searchCtrl.searchData.state;
+      rules.state1 = searchCtrl.searchData.state1;
+      rules.state2 = searchCtrl.searchData.state2;
       rules.urgent = searchCtrl.searchData.urgent;
       //console.log("rules:", rules);
       service.searchEvents(rules)
