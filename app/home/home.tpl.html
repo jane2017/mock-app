@@ -28,6 +28,10 @@
       </div>
     </div>
     <div class="col-xs-6 col-sm-9 col-lg-10">
+      <div class="time-window">
+        <label for="lasthours">Last hours: </label>
+        <input name="lasthours" type="number" ng-model="homeCtrl.limits.hoursAgo" value="24">
+      </div>
       <event-table events="homeCtrl.getEvents()" headers="homeCtrl.headers"></event-table>
     </div>
   </div>

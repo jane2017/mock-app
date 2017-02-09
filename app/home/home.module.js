@@ -31,6 +31,9 @@
     homeCtrl.headers = [];
     homeCtrl.statesCount = {};
     homeCtrl.urgencyCount = {};
+    homeCtrl.limits = {
+      hoursAgo: 24
+    };
     
     homeCtrl.getEvents = function () {
       //console.log('current all:', homeCtrl.allEvents);
@@ -100,7 +103,11 @@
     }
     
     homeCtrl.events = function () {
-      service.getEvents()
+      var rules = {};
+      rules.hoursAgo = homeCtrl.limits.hoursAgo;
+      
+      console.log("home event rules:", rules);
+      service.searchEvents(rules)
         .then(function (res) {
           //console.log('controller get data:', res);
           homeCtrl.allEvents = res.events;

@@ -5,7 +5,7 @@ var https = require('https');
 var Q = require('q');
 //var oracledb = require('oracledb');
 
-var configs = require('./config.json');
+var config = require('./config.json');
 var express = require('express');
 var app = express();
 var db = require('./db.json');
@@ -62,25 +62,42 @@ function metsServer () {
   function searchEvents(data) {
     var events = db.events;
     var result = [];
+
     if (data.urgent === undefined || data.urgent === '') {
       data.urgent = ["all"];
     }
 
-    if (data.state1 == undefined || data.state1 === '') {
+    if (data.state1 === undefined || data.state1 === '') {
       data.state1 = ["all"];
     }
 
-    if (data.state2 == undefined || data.state2 === '') {
+    if (data.state2 === undefined || data.state2 === '') {
       data.state2 = ["all"];
     }
+
+    if (data.hoursAgo === undefined) {
+      data.hoursAgo = config.hoursAgo;
+      console.log("set default hours:", data.hoursAgo);
+    }
+    else if (typeof data.hoursAgo === 'string') {
+      data.hoursAgo = parseInt(data.hoursAgo);
+    }
+
+    console.log("hoursAgo:", data.hoursAgo);
+    var now = new Date();
+    var backDate = new Date(now.setHours(now.getHours() - data.hoursAgo));
+    var backTimeStamp = backDate.getTime();
+ 
+    console.log("backtime:", backDate);
+    console.log("backTimeStamp:", backTimeStamp);
 
     for (var i in events) {
         var event = events[i];
           if ( (data.urgent.includes('all') || data.urgent.includes(event.urgencyId))
                && (data.state1.includes('all') || data.state1.includes(event.state1))
                && (data.state2.includes('all') || data.state2.includes(event.state2))
+               //&& (data.startDate > backTimeStamp)
              ) {
-            //console.log("match event:", event.eventOid);
             result.push(event);
         }
     }
